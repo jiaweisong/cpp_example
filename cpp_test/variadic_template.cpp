@@ -1,12 +1,17 @@
 #include <iostream>
 using namespace std;
 
-template<typename...> struct Tuple {};
-template<typename T1, typename T2> struct Pair {};
+template<typename...>
+struct Tuple {};
 
-template<class ...Args1> struct zip
+template<typename T1, typename T2>
+struct Pair {};
+
+template<class ...Args1>
+struct zip
 {
-  template<class ...Args2> struct with
+  template<class ...Args2>
+  struct with
   {
     typedef Tuple<Pair<Args1, Args2>...> type;
   };
